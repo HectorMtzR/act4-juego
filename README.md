@@ -22,6 +22,10 @@ WebXR necesita HTTPS o `localhost`. Para probar en el teléfono:
 2. En la computadora abre `chrome://inspect` → **Port forwarding** → `8000` → `localhost:8000`.
 3. En el teléfono abre `http://localhost:8000`.
 
+### Probar sin teléfono
+
+Abre `http://localhost:8000/?sim` en la computadora: el edificio aparece sobre una mesa simulada y se suelta el piso con clic o con la barra espaciadora. Sirve para probar la mecánica; la detección de superficies y el anclaje sólo se prueban en un Android con ARCore.
+
 ## Publicación (Cloudflare)
 
 El sitio se publica como assets estáticos de Cloudflare Workers, con HTTPS incluido (requerido por WebXR). La configuración está en [wrangler.jsonc](wrangler.jsonc). [.assetsignore](.assetsignore) evita que se publiquen archivos que no son del juego, como el spec, los scripts de Blender o `.git`.
