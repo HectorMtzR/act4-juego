@@ -1,0 +1,10 @@
+# Archivos del repo que no se publican en Cloudflare.
+.git
+.gitignore
+.wrangler
+node_modules
+wrangler.jsonc
+blender/
+docs/
+README.md
+SPEC_ACT4.md

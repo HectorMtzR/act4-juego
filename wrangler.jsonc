@@ -1,0 +1,9 @@
+// Sitio estático en Cloudflare Workers (sin build). Publicar con: npx wrangler deploy
+{
+  "name": "rascacielos-ar",
+  "compatibility_date": "2025-10-01",
+  "assets": {
+    // Se sirve la raíz del repo; lo que no es del juego se excluye en .assetsignore.
+    "directory": "."
+  }
+}
