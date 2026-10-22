@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#14181d">
+  <title>Rascacielos AR</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+      }
+    }
+  </script>
+  <script type="module" src="js/main.js"></script>
+</head>
+<body>
+  <!-- Raíz del DOM overlay de WebXR: todo lo que va encima de la cámara vive aquí. -->
+  <div id="overlay">
+    <section id="start-screen" class="screen">
+      <div class="start-card">
+        <h1>Rascacielos AR</h1>
+        <p class="tagline">Apila pisos y construye la torre más alta sobre tu mesa.</p>
+        <ul class="rules">
+          <li><span class="icon" aria-hidden="true">👆</span>Toca para soltar el piso.</li>
+          <li><span class="icon" aria-hidden="true">🎯</span>Centrado = ¡Perfecto! · Muy chueco = se cae.</li>
+          <li><span class="icon" aria-hidden="true">❤️</span>Tienes 3 vidas y 2:30 minutos.</li>
+        </ul>
+        <p class="tip">Usa una superficie con textura (no mesas blancas lisas ni brillantes). Para torres altas, juega en el piso.</p>
+        <button id="start-btn" class="btn primary" disabled>Comprobando…</button>
+        <div id="unsupported" class="notice" hidden>
+          <p class="notice-text">Este juego necesita Chrome en un Android compatible con ARCore.</p>
+          <a id="demo-link" href="#" target="_blank" rel="noopener">Ver video demo</a>
+        </div>
+        <p id="start-error" class="error" hidden></p>
+      </div>
+    </section>
+
+    <section id="ar-hud" hidden>
+      <div class="top-bar">
+        <button id="exit-btn" class="btn small">Salir</button>
+      </div>
+      <div id="message" class="message" hidden>
+        <div id="phone-anim" class="phone-anim" hidden><div class="phone"></div></div>
+        <p id="message-text"></p>
+      </div>
+      <div id="status" class="status" hidden></div>
+    </section>
+  </div>
+</body>
+</html>
